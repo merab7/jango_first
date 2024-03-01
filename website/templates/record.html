@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container p-5 mt-5">
+    
+    <div class="card">
+        <h5 class="card-header">{{costumer_record.first_name}} {{costumer_record.last_name}} ID({{costumer_record.id}}) Records</h5>
+        <div class="card-body">
+          <h5 class="card-title"><tr>
+            <td><span class="text-secondary bolder"> Name and Surname </span>: {{costumer_record.first_name}} {{costumer_record.last_name}}</td><br>  
+             
+            <td><span class="text-secondary bolder">Email:</span>   {{costumer_record.email}}</td><br>
+            <td><span class="text-secondary bold">Phone:</span>  {{costumer_record.phone}}</td><br>
+            <td><span class="text-secondary bold">Address:</span>  {{costumer_record.address}}</td><br>
+            <td><span class="text-secondary bold">City:</span>  {{costumer_record.city}}</td><br>
+            <td><span class="text-secondary bold">State:</span>  {{costumer_record.state}}</td><br>
+            <td><span class="text-secondary bold">Zipcode:</span>  {{costumer_record.zipcode}}</td><br>
+            <td><span class="text-secondary bold">Created At:</span>  {{costumer_record.created_at}}</td><br>
+            <td><span class="text-secondary bold">ID:</span>  {{costumer_record.id}}</a></td><br>
+          </tr></h5>
+        </div>
+        
+      </div>
+      <div class="containter " >
+      <a class="btn btn-secondary mt-4"  href="{% url 'home' %}">Back</a>
+      <a class="btn btn-success mt-4"  href="{% url 'update_record' costumer_record.id %}">Update</a>
+      <a class="btn btn-danger mt-4"  href="{% url 'delete_record' costumer_record.id %}">Delete</a>
+    </div>
+
+
+
+ 
+</div>
+{% endblock content %}
